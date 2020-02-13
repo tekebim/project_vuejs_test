@@ -1,36 +1,38 @@
 <template>
-    <div id="block-inscription">
-        <h1>Recevez les actualités</h1>
-        <b-form @submit="onSubmit" v-if="show">
-            <div :class="className">
-                <b-form-group
-                        id="input-group-1"
-                        label="Votre adresse email :"
-                        label-for="input-1"
-                >
-                    <b-form-input
-                            id="input-1"
-                            v-model="form.email"
-                            type="email"
-                            required
-                            placeholder="Votre adresse email"
-                            :disabled="success == true"
-                    ></b-form-input>
+    <section class="row block-newsletter p-5">
+        <div class="col-lg-6 col-12 m-auto">
+            <h1>Recevez les actualités</h1>
+            <b-form @submit="onSubmit" v-if="show">
+                <div :class="className">
+                    <b-form-group
+                            id="input-group-1"
+                            label="Votre adresse email :"
+                            label-for="input-1"
+                    >
+                        <b-form-input
+                                id="input-1"
+                                v-model="form.email"
+                                type="email"
+                                required
+                                placeholder="Votre adresse email"
+                                :disabled="success == true"
+                        ></b-form-input>
 
-                </b-form-group>
+                    </b-form-group>
 
-                <div class="notification" v-html="message"></div>
+                    <div class="notification" v-html="message"></div>
 
-                <b-button type="submit" variant="primary" v-if="!success">Envoyer</b-button>
+                    <b-button type="submit" variant="primary" v-if="!success" class="btn-primary">Envoyer</b-button>
+                </div>
+            </b-form>
+
+
+            <div class="logs">
+                {{ logs }}
             </div>
-        </b-form>
 
-
-        <div class="logs">
-            {{ logs }}
         </div>
-
-    </div>
+    </section>
 </template>
 <script>
     import axios from 'axios';
@@ -75,12 +77,10 @@
                             this.success = true
                             this.message = `Inscription effectuée avec l'adresse email : ${this.form.email}`
                             this.className = 'success'
-                        }
-                        else if(response.data.format_valid && response.data.score < 0.5) {
+                        } else if (response.data.format_valid && response.data.score < 0.5) {
                             this.message = 'Veuillez saisir une vraie adresse email valide'
                             this.className = 'warning'
-                        }
-                        else {
+                        } else {
                             this.message = 'Adresse email non valide, veuillez réessayer.'
                             this.className = 'error'
                         }
@@ -93,12 +93,20 @@
     }
 </script>
 <style lang="scss">
+    .block-newsletter {
+        h1 {
+            color: $light-blue;
+        }
+        color: $light-color;
+    }
     .error {
         color: $secondary-color;
+
         input {
-            background-color: #ff5555;
+            border-color: #ff5555;
         }
     }
+
     .success {
         color: $dark-blue;
     }

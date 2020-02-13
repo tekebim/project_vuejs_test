@@ -5,6 +5,9 @@
             <router-view name="video"/>
             <router-view/>
         </div>
+        <div class="container-fluid">
+            <router-view name="inscription"/>
+        </div>
     </div>
 </template>
 

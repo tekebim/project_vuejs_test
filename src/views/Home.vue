@@ -1,13 +1,5 @@
 <template>
     <div class="home">
-        <div class="col-lg-6 col-12">
-            <div class="block-newsletter">
-                <Inscription/>
-            </div>
-        </div>
-        <div class="col-lg-6 col-12">
-            <GoogleMap/>
-        </div>
         <div class="block-text">
             <BlockText>
                 <template v-slot:title>Texte dans le Slot Label</template>
@@ -48,20 +40,38 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <GoogleMap/>
+            </div>
+            <div class="col-lg-6 col-12">
+                <BlockText>
+                    <template v-slot:title>Lorem ipsum</template>
+                    <template v-slot:content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, distinctio
+                        fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi culpa
+                        cum delectus deserunt doloribus enim incidunt invento
+                        <ul>
+                            <li>test</li>
+                            <li>test</li>
+                            <li>test</li>
+                        </ul>
+                    </template>
+                </BlockText>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import BlockText from '@/components/BlockText.vue';
     import GoogleMap from '@/components/GoogleMap.vue';
-    import Inscription from '@/components/Inscription.vue';
 
     export default {
         name: 'Home',
         components: {
             BlockText,
             GoogleMap,
-            Inscription,
         }
     }
 </script>
@@ -69,5 +79,8 @@
 <style lang="scss">
     .home {
         color: $main-color;
+    }
+    .block-newsletter {
+        background-color: $dark-blue;
     }
 </style>

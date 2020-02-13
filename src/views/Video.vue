@@ -1,6 +1,6 @@
 <template>
-    <div class="video col-lg-6 col-12">
-        <h1>Video</h1>
+    <div class="video col-12">
+        <h1 class="m-5">Championnat de France 2019</h1>
         <BlockVideo />
     </div>
 </template>

@@ -10,6 +10,7 @@ const routes = [
     components: {
       default : () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
       video : () => import(/* webpackChunkName: "video" */ '../views/Video.vue'),
+      inscription : () => import(/* webpackChunkName: "inscription" */ '../views/Inscription.vue'),
     }
   },
   {
