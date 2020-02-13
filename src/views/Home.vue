@@ -83,11 +83,7 @@
     }
 </script>
 
-<style lang="scss">
-    .block-newsletter {
-        background-color: $dark-blue;
-    }
-
+<style lang="scss" scoped>
     .block-area {
         margin: 3em 0;
     }

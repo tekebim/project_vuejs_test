@@ -13,7 +13,7 @@
                 allowfullscreen
         ></b-embed>
 
-        <button class="m-3 btn btn-primary" @click="showResultats()">Voir les résulats</button>
+        <button class="m-3 btn btn-secondary" @click="showResultats()">Voir les résulats</button>
 
         <div id="resultats" ref="resultats" v-if="showResults">
             <h2>Liste de résultats 2020</h2>
@@ -51,7 +51,6 @@
     methods: {
         showResultats() {
             const blResultats = this.$refs.resultats;
-            console.log(blResultats)
             const offsetElTop = blResultats.offsetTop;
             if (this.showResults) {
                 this.showResults = false
@@ -62,7 +61,7 @@
         }
     }
 }</script>
-<style lang="scss">
+<style lang="scss" scoped>
     #resultats {
 
     }

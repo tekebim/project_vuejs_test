@@ -73,11 +73,13 @@
 <style lang="scss">
     .vue-map-container {
         width: 100%;
+        /*
         @include media-breakpoint-up(sm) {
             height: 30em;
         }
         @include media-breakpoint-down(sm) {
             height: 15em;
         }
+        */
     }
 </style>

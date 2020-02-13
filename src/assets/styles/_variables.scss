@@ -1,4 +1,3 @@
-$main-color: blue;
 $primary-color: #457B9D;
 $secondary-color: #E63946;
 $light-color: #F1FAEE;
@@ -6,3 +5,13 @@ $light-blue: #A8DADC;
 $dark-blue: #1D3557;
 
 $body-bg: $light-color;
+
+$theme-colors: (
+    "primary": #457B9D,
+    "secondary": #E63946
+);
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";

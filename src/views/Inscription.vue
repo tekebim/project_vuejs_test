@@ -19,7 +19,8 @@
                         ></b-form-input>
                     </b-form-group>
                     <div class="notification" v-html="message"></div>
-                    <b-button type="submit" variant="primary" v-if="!success" class="btn-primary">{{ form.submitLabel }}
+                    <b-button type="submit" variant="primary" v-if="!success" class="btn btn-secondary">{{
+                        form.submitLabel }}
                     </b-button>
                 </div>
             </b-form>
@@ -89,11 +90,12 @@
 
 <style lang="scss">
     .block-newsletter {
+        background-color: $dark-blue;
+        color: $light-color;
+
         h1 {
             color: $light-blue;
         }
-
-        color: $light-color;
     }
 
     .error {

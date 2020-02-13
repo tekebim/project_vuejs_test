@@ -19,8 +19,4 @@
     }
 </script>
 
-<style lang="scss">
-    .home {
-        color: $main-color;
-    }
-</style>
+<style lang="scss" scoped></style>
