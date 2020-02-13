@@ -2,8 +2,8 @@
     <div id="app">
         <Navigation/>
         <div class="container">
-            <router-view/>
             <router-view name="video"/>
+            <router-view/>
         </div>
     </div>
 </template>
