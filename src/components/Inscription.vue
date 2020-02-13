@@ -23,14 +23,18 @@
             </span>
 
             <b-button type="submit" variant="primary">Envoyer</b-button>
+            {{ message }}
         </b-form>
     </div>
 </template>
 <script>
+    import axios from 'axios';
     export default {
         name: 'Inscription',
         data() {
             return {
+                message: '',
+                errors: '',
                 form: {
                     email: '',
                     name: '',
@@ -48,6 +52,23 @@
             onSubmit(evt) {
                 evt.preventDefault()
                 console.log(this.form.email)
+                this.checkMail();
+            },
+            checkMail(){
+                const key = '283c27c5bb9328371ccb83a068924fc3';
+                const baseURL = 'http://apilayer.net/api/check';
+                const apiURL = baseURL + '?' + 'access_key=' + key + '&email=' + this.form.email + '&smtp=1&format=1';
+
+                axios.get(apiURL)
+                    .then(response => {
+                        // JSON responses are automatically parsed.
+                        this.message = response.data
+                        console.log(response)
+                        console.log(response.data)
+                    })
+                    .catch(e => {
+                        this.errors.push(e)
+                    })
             }
         }
     }
