@@ -1,7 +1,13 @@
 <template>
     <div class="home">
-
-        <GoogleMap/>
+        <div class="col-lg-6 col-12">
+            <div class="block-newsletter">
+                <Inscription/>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <GoogleMap/>
+        </div>
         <div class="block-text">
             <BlockText>
                 <template v-slot:title>Texte dans le Slot Label</template>
@@ -48,12 +54,14 @@
 <script>
     import BlockText from '@/components/BlockText.vue';
     import GoogleMap from '@/components/GoogleMap.vue';
+    import Inscription from '@/components/Inscription.vue';
 
     export default {
         name: 'Home',
         components: {
             BlockText,
-            GoogleMap
+            GoogleMap,
+            Inscription,
         }
     }
 </script>

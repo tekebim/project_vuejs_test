@@ -1,6 +1,5 @@
 <template>
-    <div id="block-map">
-        <h1>ma google map</h1>
+    <div id="block-map" class="m-5">
         <GmapMap ref="mapRef"
              :center="{lat:10, lng:10}"
              :zoom="12"
@@ -72,7 +71,7 @@
 </script>
 <style lang="scss">
     .vue-map-container {
-        width: 100vw;
+        width: 100%;
         height: 30em;
     }
 </style>
