@@ -1,27 +1,18 @@
 <template>
-    <nav id="nav" class="navbar navbar-expand-lg static-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Project</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <router-link to="/">Home</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/about">About</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/services">Services</router-link>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <b-navbar toggleable="lg" id="nav" type="dark" class="p-4" fixed="top">
+            <b-navbar-brand href="/">Badminton</b-navbar-brand>
 
-    </nav>
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+            <b-collapse id="nav-collapse" is-nav>
+                <b-navbar-nav class="ml-auto">
+                    <b-nav-item href="/" active>Accueil</b-nav-item>
+                    <b-nav-item href="/about">A propos</b-nav-item>
+                    <b-nav-item href="/services">Services</b-nav-item>
+                    <b-nav-item href="/contact">Contact</b-nav-item>
+                </b-navbar-nav>
+            </b-collapse>
+        </b-navbar>
 </template>
 
 <script>
@@ -33,9 +24,20 @@
 <style lang="scss" scoped>
     #nav {
         background-color: $primary-color;
+        // padding: 30px;
         .nav-item {
             margin: 0 15px;
+            a {
+                &.router-link-exact-active {
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        a,
+        .nav-item a {
             color: $light-color;
+            font-weight: bold;
         }
     }
 </style>

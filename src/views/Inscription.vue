@@ -1,13 +1,13 @@
 <template>
-    <section class="row block-newsletter p-5">
+    <section class="row block-newsletter p-4 p-sm-5">
         <div class="col-lg-6 col-12 m-auto">
             <h1>Recevez les actualités</h1>
             <b-form @submit="onSubmit" v-if="show">
                 <div :class="className">
                     <b-form-group
-                            id="input-group-1"
+                            id="input-group-email"
                             label="Votre adresse email :"
-                            label-for="input-1"
+                            label-for="input-email"
                     >
                         <b-form-input
                                 id="input-1"
@@ -17,20 +17,12 @@
                                 placeholder="Votre adresse email"
                                 :disabled="success == true"
                         ></b-form-input>
-
                     </b-form-group>
-
                     <div class="notification" v-html="message"></div>
-
-                    <b-button type="submit" variant="primary" v-if="!success" class="btn-primary">Envoyer</b-button>
+                    <b-button type="submit" variant="primary" v-if="!success" class="btn-primary">{{ form.submitLabel }}
+                    </b-button>
                 </div>
             </b-form>
-
-
-            <div class="logs">
-                {{ logs }}
-            </div>
-
         </div>
     </section>
 </template>
@@ -48,6 +40,7 @@
                 form: {
                     email: '',
                     name: '',
+                    submitLabel: `M'inscrire`,
                     checked: []
                 },
                 show: true,
@@ -79,6 +72,7 @@
                             this.className = 'success'
                         } else if (response.data.format_valid && response.data.score < 0.5) {
                             this.message = 'Veuillez saisir une vraie adresse email valide'
+                            this.submitLabel = 'Réessayer'
                             this.className = 'warning'
                         } else {
                             this.message = 'Adresse email non valide, veuillez réessayer.'
@@ -92,13 +86,16 @@
         }
     }
 </script>
+
 <style lang="scss">
     .block-newsletter {
         h1 {
             color: $light-blue;
         }
+
         color: $light-color;
     }
+
     .error {
         color: $secondary-color;
 

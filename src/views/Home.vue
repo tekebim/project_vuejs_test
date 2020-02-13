@@ -14,9 +14,9 @@
                 </template>
             </BlockText>
             <div class="row d-flex justify-content-center">
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 m-auto">
                     <b-card
-                            title="Card Title"
+                            title="Liste des partenaires"
                             img-src="https://picsum.photos/600/300/?image=25"
                             img-alt="Image"
                             img-top
@@ -26,10 +26,10 @@
                     >
                     </b-card>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 m-auto">
                     <b-card
-                            title="Card Title"
-                            img-src="https://picsum.photos/600/300/?image=25"
+                            title="Nom de l'article"
+                            img-src="http://www.ffbad.org/module/00006/1/data/une1img_2164.jpg"
                             img-alt="Image"
                             img-top
                             tag="article"
@@ -41,16 +41,23 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row block-area">
             <div class="col-lg-6 col-12">
                 <GoogleMap/>
             </div>
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 p-5">
                 <BlockText>
-                    <template v-slot:title>Lorem ipsum</template>
-                    <template v-slot:content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, distinctio
-                        fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi culpa
+                    <template v-slot:title>Accès à l'événément</template>
+                    <template v-slot:content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci,
+                        distinctio
+                        fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi
+                        culpa
                         cum delectus deserunt doloribus enim incidunt invento
+
+                        <p class="area_adress">
+                            11 rue lorem ipsum - 00000 Rouen
+                        </p>
+
                         <ul>
                             <li>test</li>
                             <li>test</li>
@@ -77,10 +84,15 @@
 </script>
 
 <style lang="scss">
-    .home {
-        color: $main-color;
-    }
     .block-newsletter {
         background-color: $dark-blue;
+    }
+
+    .block-area {
+        margin: 3em 0;
+    }
+
+    .block-text {
+        margin: 3em 0;
     }
 </style>

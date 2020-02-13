@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="main-wrapper">
         <Navigation/>
         <div class="container">
             <router-view name="video"/>
@@ -27,19 +27,14 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
+        color: $dark-blue;
     }
-
-    #nav {
-        padding: 30px;
+    .main-wrapper {
+        padding-top: 88px;
     }
-
-    #nav a {
-        font-weight: bold;
-        color: #2c3e50;
-    }
-
-    #nav a.router-link-exact-active {
-        color: #42b983;
+    *:focus {
+        border:0;
+        outline:none;
+        box-shadow:none;
     }
 </style>

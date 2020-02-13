@@ -1,15 +1,21 @@
 <template>
     <div>
+        <div class="block__title m-4 m-sm-5">
+            <h1>{{ this.title }}</h1>
+            <slot name="desc">
+                <span></span>
+            </slot>
+        </div>
         <b-embed
-            type="iframe"
-            aspect="16by9"
-            src="https://www.youtube.com/embed/0jdSy3jRQjc?rel=0"
-            allowfullscreen
+                type="iframe"
+                aspect="16by9"
+                :src="this.videoSrc"
+                allowfullscreen
         ></b-embed>
 
         <button class="m-3 btn btn-primary" @click="showResultats()">Voir les résulats</button>
 
-        <div class="resultats" v-if="showResults">
+        <div id="resultats" ref="resultats" v-if="showResults">
             <h2>Liste de résultats 2020</h2>
             <ul>
                 <li>
@@ -38,15 +44,26 @@
             showResults: false
         }
     },
+    props: {
+        title: String,
+        videoSrc: String,
+    },
     methods: {
         showResultats() {
-            if(this.showResults) {
+            const blResultats = this.$refs.resultats;
+            console.log(blResultats)
+            const offsetElTop = blResultats.offsetTop;
+            if (this.showResults) {
                 this.showResults = false
             } else {
                 this.showResults = true
+                window.scrollTo(0, offsetElTop);
             }
-
         }
     }
 }</script>
-<style lang="scss"></style>
+<style lang="scss">
+    #resultats {
+
+    }
+</style>
