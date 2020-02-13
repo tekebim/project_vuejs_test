@@ -3,10 +3,10 @@
         <b-embed
             type="iframe"
             aspect="16by9"
-            src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+            src="https://www.youtube.com/embed/0jdSy3jRQjc?rel=0"
             allowfullscreen
         ></b-embed>
-        <router-link to="/about" class="m-3 btn btn-primary">Lorem ipsum</router-link>
+        <button class="m-3 btn btn-primary">Voir les résulats</button>
     </div>
 </template>
 <script>export default {
