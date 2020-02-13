@@ -1,4 +1,4 @@
-# vuejs-b3dev-exam
+# Personal DC Campus Project
 
 ## Project setup
 ```

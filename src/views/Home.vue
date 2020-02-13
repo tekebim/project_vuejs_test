@@ -16,3 +16,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import '../assets/styles/variables';
+  .home {
+    color: $main-color;
+  }
+</style>
