@@ -2,7 +2,7 @@
     <div class="home">
         <div class="block-text">
             <BlockText>
-                <template v-slot:title>Texte dans le Slot Label</template>
+                <template v-slot:title>Lorem ipsum dolor sin amet</template>
                 <template v-slot:content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, distinctio
                     fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi culpa
                     cum delectus deserunt doloribus enim incidunt inventore magni nesciunt nulla, optio, tempore
@@ -20,7 +20,7 @@
                             <b-col md="12" lg="6">
                                 <b-card-img :src="require('@/assets/images/affiche.png')" class="rounded-0 "></b-card-img>
                             </b-col>
-                            <b-col md="12" lg="6" class="d-flex justify-content-center">
+                            <b-col md="12" lg="6" class="d-flex align-center justify-content-center">
                                 <b-card-body title="Le programme">
                                     <b-card-text>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, saepe.

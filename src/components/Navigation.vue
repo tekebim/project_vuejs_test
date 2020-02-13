@@ -10,8 +10,6 @@
             <b-navbar-nav class="ml-auto">
                 <b-nav-item href="/" active>Accueil</b-nav-item>
                 <b-nav-item href="/about">A propos</b-nav-item>
-                <b-nav-item href="/services">Services</b-nav-item>
-                <b-nav-item href="/contact">Contact</b-nav-item>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>

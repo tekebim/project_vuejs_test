@@ -42,7 +42,7 @@
             }
         },
         methods: {
-            searchNearBy() {
+            loadGoogleMap() {
                 this.$refs.mapRef.$mapPromise.then((map) => {
                     /* eslint-disable no-undef */
                     // map.panTo({lat: 49.4289314, lng: 1.0762552})
@@ -66,7 +66,7 @@
             }
         },
         mounted() {
-            this.searchNearBy()
+            this.loadGoogleMap()
         }
     }
 </script>
