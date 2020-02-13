@@ -3,6 +3,7 @@
         <Navigation/>
         <div class="container">
             <router-view/>
+            <router-view name="video"/>
         </div>
     </div>
 </template>
