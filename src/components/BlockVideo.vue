@@ -13,54 +13,47 @@
                 allowfullscreen
         ></b-embed>
 
-        <button class="m-3 btn btn-secondary" @click="showResultats()">Voir les résulats</button>
+        <button class="m-3 btn btn-secondary" @click="showBlockResults()" v-if="!showResults">Voir le tableau des résultats</button>
+        <button class="m-3 btn btn-secondary" @click="hideBlockResults()" v-else>Masquer les résultats</button>
 
-        <div id="resultats" ref="resultats" v-if="showResults">
-            <h2>Liste de résultats 2020</h2>
-            <ul>
-                <li>
-                    Simple Homme : Lorem Ipsum ( Vainqueur ) - Toto ( Finaliste )
-                </li>
-                <li>
-                    Simple Dame : Lorem Ipsum ( Vainqueur ) - Toto ( Finaliste )
-                </li>
-                <li>
-                    Double Hommes : Lorem Ipsum ( Vainqueur ) - Toto ( Finaliste )
-                </li>
-                <li>
-                    Double Dames : Lorem Ipsum ( Vainqueur ) - Toto ( Finaliste )
-                </li>
-                <li>
-                    Double Mixte : Lorem Ipsum ( Vainqueur ) - Toto ( Finaliste )
-                </li>
-            </ul>
-        </div>
+        <BlockResultats id="resultats" ref="resultats" v-if="showResults" class="table-responsive"/>
+
+        <hr>
+
     </div>
 </template>
-<script>export default {
-    name: 'BlockVideo',
-    data() {
-        return {
-            showResults: false
-        }
-    },
-    props: {
-        title: String,
-        videoSrc: String,
-    },
-    methods: {
-        showResultats() {
-            const blResultats = this.$refs.resultats;
-            const offsetElTop = blResultats.offsetTop;
-            if (this.showResults) {
-                this.showResults = false
-            } else {
+<script>
+    import BlockResultats from '@/components/BlockResultats.vue';
+
+    export default {
+        name: 'BlockVideo',
+        components: {
+            BlockResultats
+        },
+        data() {
+            return {
+                showResults: false,
+                button: {
+                    defaultLabel: 'Voir le tableau des résultats'
+                }
+            }
+        },
+        props: {
+            title: String,
+            videoSrc: String,
+        },
+        methods: {
+            showBlockResults() {
+                // const blResultats = this.$refs.resultats;
+                // const offsetElTop = blResultats.offsetTop;
                 this.showResults = true
-                window.scrollTo(0, offsetElTop);
+                // window.scrollTo(0, offsetElTop);
+            },
+            hideBlockResults() {
+                this.showResults = false
             }
         }
-    }
-}</script>
+    }</script>
 <style lang="scss" scoped>
     #resultats {
 

@@ -28,10 +28,6 @@
         background-color: $primary-color;
 
         .navbar-brand {
-            @include media-breakpoint-down(sm) {
-                font-size: 18px;
-            }
-
             .icon {
                 width: 30px;
                 height: 30px;

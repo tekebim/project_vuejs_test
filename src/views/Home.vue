@@ -41,28 +41,31 @@
             </div>
         </div>
 
+        <hr>
+
         <div class="row block-area">
             <div class="col-lg-6 col-12">
                 <GoogleMap/>
             </div>
-            <div class="col-lg-6 col-12 p-5">
+            <div class="col-lg-6 col-12 text-lg-left text-center p-3 p-md-5">
                 <BlockText>
-                    <template v-slot:title>Accès à l'événément</template>
-                    <template v-slot:content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci,
-                        distinctio
-                        fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi
-                        culpa
-                        cum delectus deserunt doloribus enim incidunt invento
+                    <template v-slot:title>A propos de l'événément</template>
+                    <template v-slot:content>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci,
+                            distinctio fuga illum itaque nostrum perferendis quas quidem rerum vero voluptatibus! Aperiam, commodi
+                            culpa cum delectus deserunt doloribus enim incidunt invento</p>
 
-                        <p class="area_adress">
-                            11 rue lorem ipsum - 00000 Rouen
-                        </p>
-
-                        <ul>
-                            <li>test</li>
-                            <li>test</li>
-                            <li>test</li>
-                        </ul>
+                        <div class="event-wrapper bordered">
+                            <div class="event-date"><strong>Du Jeudi 10 au Dimanche 13 Octobre 2019</strong></div>
+                            <div class="event-title">Championnat de France</div>
+                            <div class="event-venue">
+                                Gymnase Lorem ipsum
+                                <div class="address">
+                                    7 rue lorem ipsum<br>
+                                    ROUEN
+                                </div>
+                            </div>
+                        </div>
                     </template>
                 </BlockText>
             </div>
