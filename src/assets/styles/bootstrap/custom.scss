@@ -1,11 +1,5 @@
-// Your variable overrides
-// $body-bg: #000;
-// $body-color: #111;
-
-$theme-colors: (
-  "primary": #0074d9,
-  "danger": #ff4136
-);
-
+@import "../variables";
+// Bootstrap files
 @import '~bootstrap/scss/bootstrap';
+// Bootstrap-Vue files
 @import '~bootstrap-vue/src/index.scss';
