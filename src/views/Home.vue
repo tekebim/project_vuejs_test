@@ -1,5 +1,7 @@
 <template>
     <div class="home">
+
+        <GoogleMap/>
         <div class="block-text">
             <BlockText>
                 <template v-slot:title>Texte dans le Slot Label</template>
@@ -24,10 +26,6 @@
                             style="max-width: 20rem;"
                             class="mb-2"
                     >
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's
-                            content.
-                        </b-card-text>
                     </b-card>
                 </div>
                 <div class="col-sm-12 col-md-6">
@@ -40,10 +38,6 @@
                             style="max-width: 20rem;"
                             class="mb-2"
                     >
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's
-                            content.
-                        </b-card-text>
                     </b-card>
                 </div>
             </div>
@@ -53,11 +47,13 @@
 
 <script>
     import BlockText from '@/components/BlockText.vue';
+    import GoogleMap from '@/components/GoogleMap.vue';
 
     export default {
         name: 'Home',
         components: {
-            BlockText
+            BlockText,
+            GoogleMap
         }
     }
 </script>
