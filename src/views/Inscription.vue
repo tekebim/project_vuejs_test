@@ -18,7 +18,7 @@
                                 :disabled="success == true"
                         ></b-form-input>
                     </b-form-group>
-                    <div class="notification" v-html="message"></div>
+                    <div class="notification mb-3" v-html="message"></div>
                     <b-button type="submit" variant="primary" v-if="!success" class="btn btn-secondary">{{
                         form.submitLabel }}
                     </b-button>
@@ -70,19 +70,38 @@
                         if (response.data.format_valid && response.data.score >= 0.5) {
                             this.success = true
                             this.message = `Inscription effectuée avec l'adresse email : ${this.form.email}`
+                            this.form.submitLabel = 'Demande envoyée'
                             this.className = 'success'
                         } else if (response.data.format_valid && response.data.score < 0.5) {
                             this.message = 'Veuillez saisir une vraie adresse email valide'
-                            this.submitLabel = 'Réessayer'
+                            this.form.submitLabel = 'Réessayer'
                             this.className = 'warning'
                         } else {
                             this.message = 'Adresse email non valide, veuillez réessayer.'
+                            this.form.submitLabel = 'Réessayer'
                             this.className = 'error'
                         }
                     })
                     .catch(e => {
                         this.errors.push(e)
                     })
+            }
+        },
+        watch: {
+            'form.email': function (val) {
+                if (val.length < 5) {
+                    if (val.length == 0) {
+                        this.className = ''
+                        this.message = ''
+                        this.form.submitLabel = 'M\'inscrire'
+                    } else {
+                        this.className = 'error'
+                        this.message = 'Adresse email incomplète'
+                    }
+                } else {
+                    this.className = ''
+                    this.message = ''
+                }
             }
         }
     }
@@ -103,6 +122,14 @@
 
         input {
             border-color: #ff5555;
+        }
+    }
+
+    .warning {
+        color: #ffc107;
+
+        input {
+            border-color: #ffc107;
         }
     }
 

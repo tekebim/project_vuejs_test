@@ -32,7 +32,7 @@
         name: 'GoogleMap',
         data() {
             return {
-                keyword: 'paris',
+                keyword: 'gymnase',
                 markers: [],
                 infoWindow: {
                     position: {lat: 0, lng: 0},
@@ -45,8 +45,7 @@
             loadGoogleMap() {
                 this.$refs.mapRef.$mapPromise.then((map) => {
                     /* eslint-disable no-undef */
-                    // map.panTo({lat: 49.4289314, lng: 1.0762552})
-                    map.panTo({lat: 48.864716, lng: 2.349014})
+                    map.panTo({lat: 49.4289314, lng: 1.0762552})
                     /* eslint-disable no-undef */
                     let placesService = new google.maps.places.PlacesService(map)
                     placesService.nearbySearch({
