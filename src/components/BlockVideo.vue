@@ -6,7 +6,7 @@
             src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
             allowfullscreen
         ></b-embed>
-        <router-link to="/about" class="m-3 primary"> Lorem ipsum</router-link>
+        <router-link to="/about" class="m-3 btn btn-primary">Lorem ipsum</router-link>
     </div>
 </template>
 <script>export default {

@@ -58,13 +58,11 @@
                 const key = '283c27c5bb9328371ccb83a068924fc3';
                 const baseURL = 'http://apilayer.net/api/check';
                 const apiURL = baseURL + '?' + 'access_key=' + key + '&email=' + this.form.email + '&smtp=1&format=1';
-
+                // Request the api service for checking email
                 axios.get(apiURL)
                     .then(response => {
                         // JSON responses are automatically parsed.
                         this.message = response.data
-                        console.log(response)
-                        console.log(response.data)
                     })
                     .catch(e => {
                         this.errors.push(e)
