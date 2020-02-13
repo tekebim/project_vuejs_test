@@ -14,28 +14,38 @@
                 </template>
             </BlockText>
             <div class="row d-flex justify-content-center">
-                <div class="col-sm-12 col-md-6 m-auto">
-                    <b-card
-                            title="Liste des partenaires"
-                            img-src="https://picsum.photos/600/300/?image=25"
-                            img-alt="Image"
-                            img-top
-                            tag="article"
-                            style="max-width: 20rem;"
-                            class="mb-2"
-                    >
+                <div class="col-sm-12 col-md-6 mx-auto my-3 my-md-5">
+                    <b-card no-body class="overflow-hidden d-flex align-center justify-content-center">
+                        <b-row no-gutters>
+                            <b-col md="12" lg="6">
+                                <b-card-img :src="require('@/assets/images/affiche.png')" class="rounded-0 "></b-card-img>
+                            </b-col>
+                            <b-col md="12" lg="6" class="d-flex justify-content-center">
+                                <b-card-body title="Le programme">
+                                    <b-card-text>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, saepe.
+                                    </b-card-text>
+                                    <b-link href="#" class="btn-secondary btn btn-sm">Voir les partenaires</b-link>
+                                </b-card-body>
+                            </b-col>
+                        </b-row>
                     </b-card>
                 </div>
-                <div class="col-sm-12 col-md-6 m-auto">
-                    <b-card
-                            title="Nom de l'article"
-                            img-src="http://www.ffbad.org/module/00006/1/data/une1img_2164.jpg"
-                            img-alt="Image"
-                            img-top
-                            tag="article"
-                            style="max-width: 20rem;"
-                            class="mb-2"
-                    >
+                <div class="col-sm-12 col-md-6 mx-auto my-3 my-md-5">
+                    <b-card no-body class="overflow-hidden d-flex align-center justify-content-center">
+                        <b-row no-gutters>
+                            <b-col md="12" lg="6">
+                                <b-card-img :src="require('@/assets/images/partenaires.png')" class="rounded-0 "></b-card-img>
+                            </b-col>
+                            <b-col md="12" lg="6" class="d-flex justify-content-center">
+                                <b-card-body title="Les partenaires">
+                                    <b-card-text>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, saepe.
+                                    </b-card-text>
+                                    <b-link href="#" class="btn-secondary btn btn-sm">Découvrir le programme</b-link>
+                                </b-card-body>
+                            </b-col>
+                        </b-row>
                     </b-card>
                 </div>
             </div>
